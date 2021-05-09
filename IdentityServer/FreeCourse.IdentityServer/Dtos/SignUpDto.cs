@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace FreeCourse.IdentityServer.Dtos
+﻿namespace FreeCourse.IdentityServer.Dtos
 {
     public class SignUpDto
     {
