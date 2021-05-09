@@ -41,7 +41,6 @@ namespace FreeCourse.IdentityServer.Services
                 return;
             }
 
-
             context.Result = new GrantValidationResult(existsUser.Id.ToString(), OidcConstants.AuthenticationMethods.Password);
         }
     }

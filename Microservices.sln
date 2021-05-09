@@ -22,6 +22,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreeCourse.IdentityServer", "IdentityServer\FreeCourse.IdentityServer\FreeCourse.IdentityServer.csproj", "{DC7D3043-EA06-44F0-B36C-F25E92858167}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PhotoStock", "PhotoStock", "{91F63320-43A4-43FE-88D2-E8297139FB3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeCourse.Services.PhotoStock", "Services\PhotoStock\FreeCourse.Services.PhotoStock\FreeCourse.Services.PhotoStock.csproj", "{F701DFF0-2393-4923-B0F9-A81A742D353F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +44,10 @@ Global
 		{DC7D3043-EA06-44F0-B36C-F25E92858167}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC7D3043-EA06-44F0-B36C-F25E92858167}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC7D3043-EA06-44F0-B36C-F25E92858167}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F701DFF0-2393-4923-B0F9-A81A742D353F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F701DFF0-2393-4923-B0F9-A81A742D353F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F701DFF0-2393-4923-B0F9-A81A742D353F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F701DFF0-2393-4923-B0F9-A81A742D353F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +57,8 @@ Global
 		{996D7134-9C36-49FD-8F0F-C08E3F5C38A5} = {923863A8-FE24-4F5D-AAB0-BA5D6440BD8F}
 		{EFF265CC-9B19-4C11-AB71-6D9E61142808} = {E938F75A-2EF2-4544-AB5E-C07C09D7FE8F}
 		{DC7D3043-EA06-44F0-B36C-F25E92858167} = {823ED382-6C39-4752-B533-631986D4DB78}
+		{91F63320-43A4-43FE-88D2-E8297139FB3D} = {E6A39F08-C9C3-4815-862D-19F2CC8E8DD4}
+		{F701DFF0-2393-4923-B0F9-A81A742D353F} = {91F63320-43A4-43FE-88D2-E8297139FB3D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {82A25AE3-D241-4695-915B-6058A2440CAD}
