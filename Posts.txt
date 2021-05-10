@@ -3,3 +3,4 @@
 Services	
 	-Catalog API : http://localhost:5011
 	-Photo Stock : http://localhost:5012
+	-Basket		 : http://localhost:5013

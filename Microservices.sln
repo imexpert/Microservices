@@ -26,6 +26,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PhotoStock", "PhotoStock", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeCourse.Services.PhotoStock", "Services\PhotoStock\FreeCourse.Services.PhotoStock\FreeCourse.Services.PhotoStock.csproj", "{F701DFF0-2393-4923-B0F9-A81A742D353F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{721AD4FD-DAC6-4BC0-9DFE-33A6714BBDD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeCourse.Services.Basket", "Services\Basket\FreeCourse.Services.Basket\FreeCourse.Services.Basket.csproj", "{6BC78327-5B58-4094-8715-C941BD8AF6BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +52,10 @@ Global
 		{F701DFF0-2393-4923-B0F9-A81A742D353F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F701DFF0-2393-4923-B0F9-A81A742D353F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F701DFF0-2393-4923-B0F9-A81A742D353F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BC78327-5B58-4094-8715-C941BD8AF6BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BC78327-5B58-4094-8715-C941BD8AF6BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BC78327-5B58-4094-8715-C941BD8AF6BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BC78327-5B58-4094-8715-C941BD8AF6BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +67,8 @@ Global
 		{DC7D3043-EA06-44F0-B36C-F25E92858167} = {823ED382-6C39-4752-B533-631986D4DB78}
 		{91F63320-43A4-43FE-88D2-E8297139FB3D} = {E6A39F08-C9C3-4815-862D-19F2CC8E8DD4}
 		{F701DFF0-2393-4923-B0F9-A81A742D353F} = {91F63320-43A4-43FE-88D2-E8297139FB3D}
+		{721AD4FD-DAC6-4BC0-9DFE-33A6714BBDD8} = {E6A39F08-C9C3-4815-862D-19F2CC8E8DD4}
+		{6BC78327-5B58-4094-8715-C941BD8AF6BA} = {721AD4FD-DAC6-4BC0-9DFE-33A6714BBDD8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {82A25AE3-D241-4695-915B-6058A2440CAD}
