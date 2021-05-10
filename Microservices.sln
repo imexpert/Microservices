@@ -30,6 +30,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{721AD4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeCourse.Services.Basket", "Services\Basket\FreeCourse.Services.Basket\FreeCourse.Services.Basket.csproj", "{6BC78327-5B58-4094-8715-C941BD8AF6BA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discount", "Discount", "{9C5561ED-66E6-4868-B789-0F9CED98605E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreeCourse.Services.Discount", "Services\Discount\FreeCourse.Services.Discount\FreeCourse.Services.Discount.csproj", "{E79AC9F1-81EA-4CC5-8FD7-E7FFEE54C22B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +60,10 @@ Global
 		{6BC78327-5B58-4094-8715-C941BD8AF6BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BC78327-5B58-4094-8715-C941BD8AF6BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BC78327-5B58-4094-8715-C941BD8AF6BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E79AC9F1-81EA-4CC5-8FD7-E7FFEE54C22B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E79AC9F1-81EA-4CC5-8FD7-E7FFEE54C22B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E79AC9F1-81EA-4CC5-8FD7-E7FFEE54C22B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E79AC9F1-81EA-4CC5-8FD7-E7FFEE54C22B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -69,6 +77,8 @@ Global
 		{F701DFF0-2393-4923-B0F9-A81A742D353F} = {91F63320-43A4-43FE-88D2-E8297139FB3D}
 		{721AD4FD-DAC6-4BC0-9DFE-33A6714BBDD8} = {E6A39F08-C9C3-4815-862D-19F2CC8E8DD4}
 		{6BC78327-5B58-4094-8715-C941BD8AF6BA} = {721AD4FD-DAC6-4BC0-9DFE-33A6714BBDD8}
+		{9C5561ED-66E6-4868-B789-0F9CED98605E} = {E6A39F08-C9C3-4815-862D-19F2CC8E8DD4}
+		{E79AC9F1-81EA-4CC5-8FD7-E7FFEE54C22B} = {9C5561ED-66E6-4868-B789-0F9CED98605E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {82A25AE3-D241-4695-915B-6058A2440CAD}
