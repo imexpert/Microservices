@@ -1,8 +1,9 @@
 -Identity Server : http://localhost:5001
 
 Services	
-	-Catalog API : http://localhost:5011
-	-Photo Stock : http://localhost:5012
-	-Basket		 : http://localhost:5013
-	-Discount	 : http://localhost:5014
-	-Order		 : http://localhost:5015
+	-Catalog API	: http://localhost:5011
+	-Photo Stock	: http://localhost:5012
+	-Basket			: http://localhost:5013
+	-Discount		: http://localhost:5014
+	-Order			: http://localhost:5015
+	-Fake Payment	: http://localhost:5016
