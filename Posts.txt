@@ -1,5 +1,6 @@
 -Identity Server	: http://localhost:5001
 -Gateway			: http://localhost:5000
+-Frontend - Web		: http://localhost:5010
 
 Services	
 	-Catalog API	: http://localhost:5011
