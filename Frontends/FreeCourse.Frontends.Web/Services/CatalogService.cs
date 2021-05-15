@@ -33,21 +33,21 @@ namespace FreeCourse.Frontends.Web.Services
                 courseCreateInput.Picture = resultPhotoService.Url;
             }
 
-            var response = await _client.PostAsJsonAsync<CourseCreateInput>("courses", courseCreateInput);
+            var response = await _client.PostAsJsonAsync<CourseCreateInput>("course", courseCreateInput);
 
             return response.IsSuccessStatusCode;
         }
 
         public async Task<bool> DeleteCourseAsync(string courseId)
         {
-            var response = await _client.DeleteAsync($"courses/{courseId}");
+            var response = await _client.DeleteAsync($"course/{courseId}");
 
             return response.IsSuccessStatusCode;
         }
 
         public async Task<List<CategoryViewModel>> GetAllCategoryAsync()
         {
-            var response = await _client.GetAsync("categories");
+            var response = await _client.GetAsync("category");
 
             if (!response.IsSuccessStatusCode)
             {
@@ -81,7 +81,7 @@ namespace FreeCourse.Frontends.Web.Services
         {
             //[controller]/GetAllByUserId/{userId}
 
-            var response = await _client.GetAsync($"courses/GetAllByUserId/{userId}");
+            var response = await _client.GetAsync($"course/GetAllByUserId/{userId}");
 
             if (!response.IsSuccessStatusCode)
             {
@@ -124,7 +124,7 @@ namespace FreeCourse.Frontends.Web.Services
                 courseUpdateInput.Picture = resultPhotoService.Url;
             }
 
-            var response = await _client.PutAsJsonAsync<CourseUpdateInput>("courses", courseUpdateInput);
+            var response = await _client.PutAsJsonAsync<CourseUpdateInput>("course", courseUpdateInput);
 
             return response.IsSuccessStatusCode;
         }

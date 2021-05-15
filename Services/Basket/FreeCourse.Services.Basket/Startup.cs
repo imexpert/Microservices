@@ -33,11 +33,10 @@ namespace FreeCourse.Services.Basket
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var requiredAuthorizePolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
-
+            var requireAuthorizePolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
-
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => {
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
                 options.Authority = Configuration["IdentityServerURL"];
                 options.Audience = "resource_basket";
                 options.RequireHttpsMetadata = false;
@@ -46,24 +45,23 @@ namespace FreeCourse.Services.Basket
             services.AddHttpContextAccessor();
             services.AddScoped<ISharedIdentityService, SharedIdentityService>();
             services.AddScoped<IBasketService, BasketService>();
-
             services.Configure<RedisSettings>(Configuration.GetSection("RedisSettings"));
 
-            services.AddSingleton<RedisService>(s =>
+            services.AddSingleton<RedisService>(sp =>
             {
-                var redisSettings = s.GetRequiredService<IOptions<RedisSettings>>().Value;
+                var redisSettings = sp.GetRequiredService<IOptions<RedisSettings>>().Value;
 
-                var redisService = new RedisService(redisSettings.Host, redisSettings.Port);
+                var redis = new RedisService(redisSettings.Host, redisSettings.Port);
 
-                redisService.Connect();
+                redis.Connect();
 
-                return redisService;
+                return redis;
             });
 
-            services.AddControllers(s => {
-                s.Filters.Add(new AuthorizeFilter(requiredAuthorizePolicy));
+            services.AddControllers(opt =>
+            {
+                opt.Filters.Add(new AuthorizeFilter(requireAuthorizePolicy));
             });
-
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "FreeCourse.Services.Basket", Version = "v1" });

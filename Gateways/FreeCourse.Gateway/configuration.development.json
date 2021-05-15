@@ -49,12 +49,10 @@
       ],
       "UpstreamPathTemplate": "/services/basket/{everything}",
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
-      "UpstreamSchema": "http",
+      "UpstreamScheme": "http",
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "GatewayAuthenticationScheme",
-        "AllowedScopes": [
-          "basket_fullpermission"
-        ]
+        "AllowedScopes": [ "basket_fullpermission" ]
       }
     },
     {

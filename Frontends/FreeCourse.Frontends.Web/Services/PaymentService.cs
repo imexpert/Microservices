@@ -20,7 +20,7 @@ namespace FreeCourse.Frontends.Web.Services
 
         public async Task<bool> ReceivePayment(PaymentInfoInput paymentInfoInput)
         {
-            var response = await _httpClient.PostAsJsonAsync<PaymentInfoInput>("fakepayments", paymentInfoInput);
+            var response = await _httpClient.PostAsJsonAsync<PaymentInfoInput>("fakepayment", paymentInfoInput);
 
             return response.IsSuccessStatusCode;
         }

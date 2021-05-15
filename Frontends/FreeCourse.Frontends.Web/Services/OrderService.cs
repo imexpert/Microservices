@@ -74,7 +74,7 @@ namespace FreeCourse.Frontends.Web.Services
 
         public async Task<List<OrderViewModel>> GetOrder()
         {
-            var response = await _httpClient.GetFromJsonAsync<Response<List<OrderViewModel>>>("orders");
+            var response = await _httpClient.GetFromJsonAsync<Response<List<OrderViewModel>>>("order");
 
             return response.Data;
         }
