@@ -1,7 +1,12 @@
+using FluentValidation.AspNetCore;
+using FreeCourse.Frontends.Web.Extensions;
 using FreeCourse.Frontends.Web.Handlers;
+using FreeCourse.Frontends.Web.Helpers;
 using FreeCourse.Frontends.Web.Models;
 using FreeCourse.Frontends.Web.Services;
 using FreeCourse.Frontends.Web.Services.Interfaces;
+using FreeCourse.Frontends.Web.Validators;
+using FreeCourse.Shared.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,16 +34,17 @@ namespace FreeCourse.Frontends.Web
         {
             var serviceApiSettings = Configuration.GetSection("ServiceApiSettings").Get<ServiceApiSettings>();
 
-            services.AddHttpContextAccessor();
-            services.AddHttpClient<IIdentityService, IdentityService>();
-            services.AddScoped<ResourceOwnerPasswordTokenHandler>();
-
-            services.AddHttpClient<IUserService, UserService>(s=> {
-                s.BaseAddress = new Uri(serviceApiSettings.IdentityBaseUri);
-            }).AddHttpMessageHandler<ResourceOwnerPasswordTokenHandler>();
-
-            services.Configure<ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
             services.Configure<ClientSettings>(Configuration.GetSection("ClientSettings"));
+            services.Configure<ServiceApiSettings>(Configuration.GetSection("ServiceApiSettings"));
+            services.AddHttpContextAccessor();
+            services.AddAccessTokenManagement();
+            services.AddSingleton<PhotoHelper>();
+            services.AddScoped<ISharedIdentityService, SharedIdentityService>();
+
+            services.AddScoped<ResourceOwnerPasswordTokenHandler>();
+            services.AddScoped<ClientCredentialTokenHandler>();
+
+            services.AddHttpClientServices(Configuration);
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, s=>
             {
@@ -48,7 +54,7 @@ namespace FreeCourse.Frontends.Web
                 s.Cookie.Name = "udemywebcookie";
             });
 
-            services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            services.AddControllersWithViews().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CourseCreateInputValidator>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
