@@ -35,8 +35,10 @@ namespace FreeCourse.Services.Order.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMassTransit(s => {
+            services.AddMassTransit(s =>
+            {
                 s.AddConsumer<CreateOrderMessageCommandConsumer>();
+                s.AddConsumer<CourseNameChangedEventConsumer>();
 
                 //default port : 5672
                 s.UsingRabbitMq((context, cfg) =>
@@ -51,6 +53,11 @@ namespace FreeCourse.Services.Order.API
                      {
                          e.ConfigureConsumer<CreateOrderMessageCommandConsumer>(context);
                      });
+
+                    cfg.ReceiveEndpoint("course-name-changed-event-order-service", e =>
+                    {
+                        e.ConfigureConsumer<CourseNameChangedEventConsumer>(context);
+                    });
                 });
             });
 
@@ -60,7 +67,8 @@ namespace FreeCourse.Services.Order.API
 
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => {
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            {
                 options.Authority = Configuration["IdentityServerURL"];
                 options.Audience = "resource_order";
                 options.RequireHttpsMetadata = false;
@@ -68,7 +76,7 @@ namespace FreeCourse.Services.Order.API
 
             services.AddDbContext<OrderDbContext>(s =>
             {
-                s.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), t=>
+                s.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), t =>
                 {
                     t.MigrationsAssembly("FreeCourse.Services.Order.Infrastructure");
                 });
@@ -78,7 +86,8 @@ namespace FreeCourse.Services.Order.API
             services.AddScoped<ISharedIdentityService, SharedIdentityService>();
             services.AddHttpContextAccessor();
 
-            services.AddControllers(s => {
+            services.AddControllers(s =>
+            {
                 s.Filters.Add(new AuthorizeFilter(requiredAuthorizePolicy));
             });
 
